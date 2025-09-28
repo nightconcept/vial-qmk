@@ -29,8 +29,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Space reduction */
 
-#define DYNAMIC_KEYMAP_LAYER_COUNT 6
-#define VIAL_TAP_DANCE_ENTRIES 4
+#define DYNAMIC_KEYMAP_LAYER_COUNT 5
+#define VIAL_TAP_DANCE_ENTRIES 6
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
 #define NO_ACTION_ONESHOT
