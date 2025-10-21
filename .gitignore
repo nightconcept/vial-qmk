@@ -119,3 +119,8 @@ compile_commands.json
 
 # Claude Code settings
 .claude/
+
+# devenv/direnv
+.direnv/
+.devenv/
+.devenv.flake.nix
