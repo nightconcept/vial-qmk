@@ -1,6 +1,10 @@
-{ pkgs, lib, config, inputs, ... }:
-
 {
+  pkgs,
+  lib,
+  config,
+  inputs,
+  ...
+}: {
   packages = with pkgs; [
     # QMK CLI and Python environment
     qmk
@@ -39,12 +43,14 @@
     echo "QMK development environment loaded!"
     echo "QMK_HOME is set to: $QMK_HOME"
     echo ""
-    echo "Available tools:"
-    echo "  - qmk (QMK CLI)"
-    echo "  - avr-gcc (AVR cross-compiler)"
-    echo "  - arm-none-eabi-gcc (ARM cross-compiler)"
-    echo "  - make, gcc, git, and other build tools"
-    echo ""
-    echo "Run 'qmk setup' to initialize your QMK environment if needed."
+
+    # Check if submodules are initialized
+    if [ ! -f "lib/chibios/readme.txt" ]; then
+      echo "⚠️  Git submodules not initialized. Running 'qmk setup'..."
+      echo ""
+      qmk setup -y
+    else
+      echo "✓ Git submodules are initialized"
+    fi
   '';
 }
