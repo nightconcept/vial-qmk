@@ -3,6 +3,7 @@
 {
   packages = with pkgs; [
     # QMK CLI and Python environment
+    qmk
     python3
     python3Packages.pip
 
@@ -38,14 +39,6 @@
     echo "QMK development environment loaded!"
     echo "QMK_HOME is set to: $QMK_HOME"
     echo ""
-
-    # Install QMK CLI automatically if not present
-    if ! command -v qmk &> /dev/null; then
-      echo "Installing QMK CLI..."
-      pip install --user qmk
-      export PATH="$HOME/.local/bin:$PATH"
-    fi
-
     echo "Available tools:"
     echo "  - qmk (QMK CLI)"
     echo "  - avr-gcc (AVR cross-compiler)"

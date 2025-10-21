@@ -46,6 +46,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    undef RGBLED_SPLIT
 #    define RGBLED_SPLIT \
         { 27, 27 }
+#    undef RGBLIGHT_LIMIT_VAL
 #    define RGBLIGHT_LIMIT_VAL 120
 #    define RGBLIGHT_HUE_STEP  10
 #    define RGBLIGHT_SAT_STEP  17
